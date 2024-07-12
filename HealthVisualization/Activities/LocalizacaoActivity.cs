@@ -147,7 +147,7 @@ namespace HealthVisualization.Activities
             }
             else
             {
-                Toast.MakeText(this, "ative seu GPS", ToastLength.Short).Show(); // TODO: Definir uma nova mensagem toast
+                Toast.MakeText(this, "ligue seu GPS", ToastLength.Short).Show(); // TODO: Definir uma nova mensagem toast
             }
         }
 
