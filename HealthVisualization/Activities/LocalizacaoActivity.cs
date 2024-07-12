@@ -64,7 +64,7 @@ namespace HealthVisualization.Activities
                         else
                         {
                             // Permissão negada, você pode mostrar uma mensagem ou fazer outra ação
-                            Toast.MakeText(this, "Permissão de localização foi negada.", ToastLength.Short).Show(); // TODO: Definir uma nova mensagem toast
+                            Toast.MakeText(this, "Não deu boa!", ToastLength.Short).Show(); // TODO: Definir uma nova mensagem toast
                         }
                     }
                     break;
