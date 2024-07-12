@@ -64,7 +64,7 @@ namespace HealthVisualization.Activities
                         else
                         {
                             // Permissão negada, você pode mostrar uma mensagem ou fazer outra ação
-                            Toast.MakeText(this, "Permissão de localização foi negada.", ToastLength.Short).Show(); // TODO: Definir uma nova mensagem toast
+                            Toast.MakeText(this, "Não foi permitido encontrar a localização.", ToastLength.Short).Show(); // TODO: Definir uma nova mensagem toast
                         }
                     }
                     break;
@@ -106,7 +106,7 @@ namespace HealthVisualization.Activities
             OnLocationChanged(location);
 
             // Agenda a próxima atualização
-            _handler.PostDelayed(_updatePositionAction, 1000); // TODO: Definir um novo intervalo de tempo de atualização da rota
+            _handler.PostDelayed(_updatePositionAction, 800); // TODO: Definir um novo intervalo de tempo de atualização da rota
         }
 
         private List<LatLng> GenerateRoute(LatLng startLocation, double totalDistanceMeters, int points)
@@ -147,7 +147,7 @@ namespace HealthVisualization.Activities
             }
             else
             {
-                Toast.MakeText(this, "GPS is not enabled", ToastLength.Short).Show(); // TODO: Definir uma nova mensagem toast
+                Toast.MakeText(this, "ative seu GPS", ToastLength.Short).Show(); // TODO: Definir uma nova mensagem toast
             }
         }
 
@@ -156,7 +156,7 @@ namespace HealthVisualization.Activities
             //_locationManager.RequestLocationUpdates(_locationProvider, 0, 0, this);
 
             // Inicia a atualização das posições
-            _handler.PostDelayed(_updatePositionAction, 1000); // TODO: Definir um novo intervalo de tempo de atualização da rota
+            _handler.PostDelayed(_updatePositionAction, 800); // TODO: Definir um novo intervalo de tempo de atualização da rota
         }
 
         public void OnLocationChanged(Location location)
