@@ -28,7 +28,7 @@ namespace HealthVisualization.Activities
     public class CustomPagerAdapter : FragmentPagerAdapter
     {
         // TODO: Defina novos nomes para as tabs
-        private readonly string[] tabTitles = { "Login", "Cadastro" };
+        private readonly string[] tabTitles = { "Faça o Login", "Cadastre-se" };
 
         public CustomPagerAdapter(AndroidX.Fragment.App.FragmentManager fm) : base(fm)
         {
