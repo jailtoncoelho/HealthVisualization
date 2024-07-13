@@ -7,6 +7,7 @@ using AndroidX.AppCompat.App;
 using AndroidX.Fragment.App;
 using Newtonsoft.Json;
 using Android.Views;
+using Firebase.Database.Query;
 
 namespace HealthVisualization.Activities
 {
@@ -119,6 +120,7 @@ namespace HealthVisualization.Activities
                     // TODO: Defina uma nova raiz para o banco de dados. Exemplo: pessoas
                     var result = await firebase
                         .Child("usuarios")
+                        .Child("pessoas")
                         .PostAsync(jsonDados);
 
                     if (result != null)
