@@ -176,7 +176,7 @@ namespace HealthVisualization.Activities
                     .SetIcon(BitmapDescriptorFactory.DefaultMarker(BitmapDescriptorFactory.HueBlue)));
 
                 // Atualiza o texto com a latitude e longitude atual
-                _locationTextView.Text = $"Latitude: {location.Latitude}, Longitude: {location.Longitude}"; // TODO: Definir um novo texto do locationTextView
+                _locationTextView.Text = $"Altura: {location.Latitude}, Largura: {location.Longitude}"; // TODO: Definir um novo texto do locationTextView
             }
         }
 
