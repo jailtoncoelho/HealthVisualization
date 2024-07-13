@@ -27,8 +27,7 @@ namespace HealthVisualization.Activities
 
     public class CustomPagerAdapter : FragmentPagerAdapter
     {
-        // TODO: Defina novos nomes para as tabs
-        private readonly string[] tabTitles = { "Login", "Cadastro" };
+        private readonly string[] tabTitles = { "Usuario", "Cadastro do Usuario" };
 
         public CustomPagerAdapter(AndroidX.Fragment.App.FragmentManager fm) : base(fm)
         {
@@ -114,9 +113,9 @@ namespace HealthVisualization.Activities
                     //Conecta com o banco de dados Realitme Database do Firebase
                     FirebaseClient firebase = new FirebaseClient(firebaseUrl);
 
-                    // TODO: Defina uma nova raiz para o banco de dados. Exemplo: pessoas
+                    
                     var result = await firebase
-                        .Child("usuarios")
+                        .Child("pessoas")
                         .PostAsync(jsonDados);
 
                     if (result != null)
@@ -158,9 +157,8 @@ namespace HealthVisualization.Activities
             //Conecta com o banco de dados Realitme Database do Firebase
             FirebaseClient firebase = new FirebaseClient(firebaseUrl);
 
-            // TODO: Defina uma nova raiz para o banco de dados. Exemplo: pessoas
             var usuario = (await firebase
-                .Child("usuarios")
+                .Child("pessoas")
                 .OnceAsync<Usuario>()).Select(item => new Usuario
                 {
                     Email = item.Object.Email,

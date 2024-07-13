@@ -8,7 +8,7 @@
 
 
   <!-- TODO: Alterar o link do Firebase para o que você criou -->
-  <string name="firebase_url">https://health-visualization-default-rtdb.firebaseio.com/</string>
+  <string name="firebase_url">https://yourtool-37681-default-rtdb.firebaseio.com/</string>
 
 
 </resources>
