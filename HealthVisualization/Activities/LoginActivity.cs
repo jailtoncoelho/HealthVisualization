@@ -92,6 +92,9 @@ namespace HealthVisualization.Activities
             var emailUser = view.FindViewById<EditText>(Resource.Id.editTextEmail);
             var senhaUser = view.FindViewById<EditText>(Resource.Id.editTextSenha);
             var confSenhaUser = view.FindViewById<EditText>(Resource.Id.editTextConfirmarSenha);
+            var cpfUser = view.FindViewById<EditText>(Resource.Id.editTextCpf);
+            var cepUser = view.FindViewById<EditText>(Resource.Id.editTextCep);
+
 
 
             if (senhaUser?.Text == confSenhaUser?.Text)
