@@ -119,7 +119,7 @@ namespace HealthVisualization.Activities
 
                     // TODO: Defina uma nova raiz para o banco de dados. Exemplo: pessoas
                     var result = await firebase
-                        .Child("usuarios")
+                        .Child("Pessoas")
                         .PostAsync(jsonDados);
 
                     if (result != null)
