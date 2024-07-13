@@ -21,7 +21,7 @@ namespace HealthVisualization.Activities
         private GoogleMap _map;
         private LocationManager _locationManager;
         private string _locationProvider;
-        private TextView _locationTextView;
+        private TextView _localizacaoTextoVer;
         const int RequestLocationId = 1;
 
         private LatLng _startLocation;
@@ -36,7 +36,7 @@ namespace HealthVisualization.Activities
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_localizacao);
 
-            _locationTextView = FindViewById<TextView>(Resource.Id.locationTextView);
+            _localizacaoTextoVer = FindViewById<TextView>(Resource.Id.locationTextView);
 
             if (ContextCompat.CheckSelfPermission(this, Android.Manifest.Permission.AccessFineLocation) != Android.Content.PM.Permission.Granted)
             {
@@ -64,7 +64,7 @@ namespace HealthVisualization.Activities
                         else
                         {
                             // Permissão negada, você pode mostrar uma mensagem ou fazer outra ação
-                            Toast.MakeText(this, "Permissão de localização foi negada.", ToastLength.Short).Show(); // TODO: Definir uma nova mensagem toast
+                            Toast.MakeText(this, "Aqui não vacilão!", ToastLength.Short).Show(); // TODO: Definir uma nova mensagem toast
                         }
                     }
                     break;
@@ -106,7 +106,7 @@ namespace HealthVisualization.Activities
             OnLocationChanged(location);
 
             // Agenda a próxima atualização
-            _handler.PostDelayed(_updatePositionAction, 1000); // TODO: Definir um novo intervalo de tempo de atualização da rota
+            _handler.PostDelayed(_updatePositionAction, 999); // TODO: Definir um novo intervalo de tempo de atualização da rota
         }
 
         private List<LatLng> GenerateRoute(LatLng startLocation, double totalDistanceMeters, int points)
@@ -147,7 +147,7 @@ namespace HealthVisualization.Activities
             }
             else
             {
-                Toast.MakeText(this, "GPS is not enabled", ToastLength.Short).Show(); // TODO: Definir uma nova mensagem toast
+                Toast.MakeText(this, "GPS não está habilitado", ToastLength.Short).Show(); // TODO: Definir uma nova mensagem toast
             }
         }
 
@@ -156,7 +156,7 @@ namespace HealthVisualization.Activities
             //_locationManager.RequestLocationUpdates(_locationProvider, 0, 0, this);
 
             // Inicia a atualização das posições
-            _handler.PostDelayed(_updatePositionAction, 1000); // TODO: Definir um novo intervalo de tempo de atualização da rota
+            _handler.PostDelayed(_updatePositionAction, 1001); // TODO: Definir um novo intervalo de tempo de atualização da rota
         }
 
         public void OnLocationChanged(Location location)
@@ -176,7 +176,7 @@ namespace HealthVisualization.Activities
                     .SetIcon(BitmapDescriptorFactory.DefaultMarker(BitmapDescriptorFactory.HueBlue)));
 
                 // Atualiza o texto com a latitude e longitude atual
-                _locationTextView.Text = $"Latitude: {location.Latitude}, Longitude: {location.Longitude}"; // TODO: Definir um novo texto do locationTextView
+                _localizacaoTextoVer.Text = $"Latitude: {location.Latitude}, Longitude: {location.Longitude}"; // TODO: Definir um novo texto do locationTextView
             }
         }
 
