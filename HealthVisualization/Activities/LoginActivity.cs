@@ -28,7 +28,7 @@ namespace HealthVisualization.Activities
     public class CustomPagerAdapter : FragmentPagerAdapter
     {
         // TODO: Defina novos nomes para as tabs
-        private readonly string[] tabTitles = { "Login", "Cadastro" };
+        private readonly string[] tabTitles = { "Entrar", "Conectar" };
 
         public CustomPagerAdapter(AndroidX.Fragment.App.FragmentManager fm) : base(fm)
         {
@@ -92,6 +92,8 @@ namespace HealthVisualization.Activities
             var emailUser = view.FindViewById<EditText>(Resource.Id.editTextEmail);
             var senhaUser = view.FindViewById<EditText>(Resource.Id.editTextSenha);
             var confSenhaUser = view.FindViewById<EditText>(Resource.Id.editTextConfirmarSenha);
+            var nomeCpf = view.FindViewById<EditText>(Resource.Id.editTextCpf);
+            var nomeCep = view.FindViewById<EditText>(Resource.Id.editTextCep);
 
 
             if (senhaUser?.Text == confSenhaUser?.Text)
@@ -116,7 +118,7 @@ namespace HealthVisualization.Activities
 
                     // TODO: Defina uma nova raiz para o banco de dados. Exemplo: pessoas
                     var result = await firebase
-                        .Child("usuarios")
+                        .Child("humanos")
                         .PostAsync(jsonDados);
 
                     if (result != null)
@@ -160,7 +162,7 @@ namespace HealthVisualization.Activities
 
             // TODO: Defina uma nova raiz para o banco de dados. Exemplo: pessoas
             var usuario = (await firebase
-                .Child("usuarios")
+                .Child("humanos")
                 .OnceAsync<Usuario>()).Select(item => new Usuario
                 {
                     Email = item.Object.Email,
