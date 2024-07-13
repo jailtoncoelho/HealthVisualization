@@ -114,9 +114,9 @@ namespace HealthVisualization.Activities
                     //Conecta com o banco de dados Realitme Database do Firebase
                     FirebaseClient firebase = new FirebaseClient(firebaseUrl);
 
-                    // TODO: Defina uma nova raiz para o banco de dados. Exemplo: pessoas
+                    
                     var result = await firebase
-                        .Child("usuarios")
+                        .Child("pessoas")
                         .PostAsync(jsonDados);
 
                     if (result != null)
