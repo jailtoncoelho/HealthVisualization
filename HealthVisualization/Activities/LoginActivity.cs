@@ -119,8 +119,7 @@ namespace HealthVisualization.Activities
 
                     // TODO: Defina uma nova raiz para o banco de dados. Exemplo: pessoas
                     var result = await firebase
-                        .Child("usuarios")
-                        .Child("pessoas")
+                        .Child("pessoas")                      
                         .PostAsync(jsonDados);
 
                     if (result != null)
@@ -164,7 +163,7 @@ namespace HealthVisualization.Activities
 
             // TODO: Defina uma nova raiz para o banco de dados. Exemplo: pessoas
             var usuario = (await firebase
-                .Child("usuarios")
+                .Child("pessoas")
                 .OnceAsync<Usuario>()).Select(item => new Usuario
                 {
                     Email = item.Object.Email,
