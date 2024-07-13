@@ -16,6 +16,14 @@
         android:minWidth="25px"
         android:minHeight="25px"
         android:id="@+id/editTextNome" />
+    <EditText
+        android:inputType="textAutoComplete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Digite aqui o cpf"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:id="@+id/editTextCpf" />
 
     <!-- TODO: Adicionar hint para "Digite aqui o email" nos arquivos de valores -->
     <EditText

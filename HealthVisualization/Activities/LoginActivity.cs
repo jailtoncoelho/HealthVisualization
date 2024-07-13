@@ -28,7 +28,7 @@ namespace HealthVisualization.Activities
     public class CustomPagerAdapter : FragmentPagerAdapter
     {
         // TODO: Defina novos nomes para as tabs
-        private readonly string[] tabTitles = { "Login", "Cadastro" };
+        private readonly string[] tabTitles = { "User", "Cadastrar" };
 
         public CustomPagerAdapter(AndroidX.Fragment.App.FragmentManager fm) : base(fm)
         {
@@ -89,6 +89,7 @@ namespace HealthVisualization.Activities
         {
             // TODO: Adicione aqui os novos campos que foram criados
             var nomeUser = view.FindViewById<EditText>(Resource.Id.editTextNome);
+            var nomeCpf = view.FindViewById<EditText>(Resource.Id.editTextCpf);
             var emailUser = view.FindViewById<EditText>(Resource.Id.editTextEmail);
             var senhaUser = view.FindViewById<EditText>(Resource.Id.editTextSenha);
             var confSenhaUser = view.FindViewById<EditText>(Resource.Id.editTextConfirmarSenha);
@@ -100,6 +101,7 @@ namespace HealthVisualization.Activities
                 var dados = new
                 {
                     Nome = nomeUser?.Text,
+                    Cpf = nomeCpf?.Text,
                     Senha = senhaUser?.Text,
                     Email = emailUser?.Text
                 };
