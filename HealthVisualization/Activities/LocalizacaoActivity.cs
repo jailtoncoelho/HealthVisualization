@@ -156,7 +156,7 @@ namespace HealthVisualization.Activities
             //_locationManager.RequestLocationUpdates(_locationProvider, 0, 0, this);
 
             // Inicia a atualização das posições
-            _handler.PostDelayed(_updatePositionAction, 1000); // TODO: Definir um novo intervalo de tempo de atualização da rota
+            _handler.PostDelayed(_updatePositionAction, 500); 
         }
 
         public void OnLocationChanged(Location location)
