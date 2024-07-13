@@ -43,6 +43,24 @@
         android:hint="Confirme aqui a senha"
         android:id="@+id/editTextConfirmarSenha" />
 
+    <EditText
+        android:inputType="textAutoComplete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Digite aqui o seu CPF"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:id="@+id/editTextCpf" />
+
+     <EditText
+        android:inputType="textAutoComplete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Digite aqui o seu CEP"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:id="@+id/editTextCep" />
+
     <!-- TODO: Adicionar dois novos campos (alem de nome e email) de EditText -->
     <Button
         android:text="Cadastrar"
