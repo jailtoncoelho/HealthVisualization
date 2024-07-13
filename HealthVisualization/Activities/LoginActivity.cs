@@ -7,6 +7,7 @@ using AndroidX.AppCompat.App;
 using AndroidX.Fragment.App;
 using Newtonsoft.Json;
 using Android.Views;
+using Firebase.Database.Query;
 
 namespace HealthVisualization.Activities
 {
@@ -28,7 +29,7 @@ namespace HealthVisualization.Activities
     public class CustomPagerAdapter : FragmentPagerAdapter
     {
         // TODO: Defina novos nomes para as tabs
-        private readonly string[] tabTitles = { "Login", "Cadastro" };
+        private readonly string[] tabTitles = { "User", "Cadastrar" };
 
         public CustomPagerAdapter(AndroidX.Fragment.App.FragmentManager fm) : base(fm)
         {
@@ -89,6 +90,7 @@ namespace HealthVisualization.Activities
         {
             // TODO: Adicione aqui os novos campos que foram criados
             var nomeUser = view.FindViewById<EditText>(Resource.Id.editTextNome);
+            var nomeCpf = view.FindViewById<EditText>(Resource.Id.editTextCpf);
             var emailUser = view.FindViewById<EditText>(Resource.Id.editTextEmail);
             var senhaUser = view.FindViewById<EditText>(Resource.Id.editTextSenha);
             var confSenhaUser = view.FindViewById<EditText>(Resource.Id.editTextConfirmarSenha);
@@ -100,6 +102,7 @@ namespace HealthVisualization.Activities
                 var dados = new
                 {
                     Nome = nomeUser?.Text,
+                    Cpf = nomeCpf?.Text,
                     Senha = senhaUser?.Text,
                     Email = emailUser?.Text
                 };
@@ -116,7 +119,7 @@ namespace HealthVisualization.Activities
 
                     // TODO: Defina uma nova raiz para o banco de dados. Exemplo: pessoas
                     var result = await firebase
-                        .Child("usuarios")
+                        .Child("pessoas")                      
                         .PostAsync(jsonDados);
 
                     if (result != null)
@@ -160,7 +163,7 @@ namespace HealthVisualization.Activities
 
             // TODO: Defina uma nova raiz para o banco de dados. Exemplo: pessoas
             var usuario = (await firebase
-                .Child("usuarios")
+                .Child("pessoas")
                 .OnceAsync<Usuario>()).Select(item => new Usuario
                 {
                     Email = item.Object.Email,
