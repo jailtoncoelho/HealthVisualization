@@ -106,7 +106,7 @@ namespace HealthVisualization.Activities
             OnLocationChanged(location);
 
             // Agenda a próxima atualização
-            _handler.PostDelayed(_updatePositionAction, 1000); // TODO: Definir um novo intervalo de tempo de atualização da rota
+            _handler.PostDelayed(_updatePositionAction, 2000); // TODO: Definir um novo intervalo de tempo de atualização da rota
         }
 
         private List<LatLng> GenerateRoute(LatLng startLocation, double totalDistanceMeters, int points)
