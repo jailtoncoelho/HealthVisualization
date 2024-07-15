@@ -1,17 +1,12 @@
-using Android.App;
-using Android.OS;
-using AndroidX.Core.App;
-using AndroidX.Core.Content;
-using Android.Locations;
-using Android.Widget;
-using AndroidX.AppCompat.App;
-using Android.Runtime;
+using Android.Content.PM;
 using Android.Gms.Maps;
 using Android.Gms.Maps.Model;
-using Android.Content;
-using Java.Security;
-using Android.Content.PM;
-using Android.Media;
+using Android.Locations;
+using Android.OS;
+using Android.Runtime;
+using AndroidX.AppCompat.App;
+using AndroidX.Core.App;
+using AndroidX.Core.Content;
 
 namespace HealthVisualization.Activities
 {
@@ -23,6 +18,7 @@ namespace HealthVisualization.Activities
         private string _locationProvider;
         private TextView _locationTextView;
         const int RequestLocationId = 1;
+
 
         private LatLng _startLocation;
         private List<LatLng> _route;
@@ -82,6 +78,10 @@ namespace HealthVisualization.Activities
             _handler = new Handler();
             _updatePositionAction = new Action(UpdatePosition);
         }
+
+
+
+
 
         private void UpdatePosition()
         {
@@ -183,5 +183,10 @@ namespace HealthVisualization.Activities
         public void OnProviderDisabled(string provider) { }
         public void OnProviderEnabled(string provider) { }
         public void OnStatusChanged(string provider, [GeneratedEnum] Availability status, Bundle extras) { }
+    }
+
+    public class Config
+    {
+        public string GoogleMapsApiKey { get; set; }
     }
 }

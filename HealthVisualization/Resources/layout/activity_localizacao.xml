@@ -10,10 +10,6 @@
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
-    <!-- TODO: Mover o padding para res/values/dimens.xml -->
-    <!-- TODO: Mover o textSize para res/values/dimens.xml -->
-    <!-- TODO: Mover a cor do texto para res/values/colors.xml -->
     <TextView
         android:id="@+id/locationTextView"
         android:layout_width="match_parent"

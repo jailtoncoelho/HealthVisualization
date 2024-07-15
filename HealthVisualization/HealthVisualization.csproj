@@ -16,6 +16,7 @@
     <None Remove="Resources\layout\activity_login_usuario.xml" />
     <None Remove="Resources\values\colors.xml" />
     <None Remove="Resources\values\dimens.xml" />
+    <None Remove="Resources\values\secrets.xml" />
     <None Remove="Resources\values\styles.xml" />
   </ItemGroup>
   <ItemGroup>
