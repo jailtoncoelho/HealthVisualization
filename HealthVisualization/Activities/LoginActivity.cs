@@ -90,6 +90,7 @@ namespace HealthVisualization.Activities
             // TODO: Adicione aqui os novos campos que foram criados
             var nomeUser = view.FindViewById<EditText>(Resource.Id.editTextNome);
             var emailUser = view.FindViewById<EditText>(Resource.Id.editTextEmail);
+            var cpfser = view.FindViewById<EditText>(Resource.Id.editTextCPF);
             var senhaUser = view.FindViewById<EditText>(Resource.Id.editTextSenha);
             var confSenhaUser = view.FindViewById<EditText>(Resource.Id.editTextConfirmarSenha);
 
@@ -114,7 +115,7 @@ namespace HealthVisualization.Activities
                     //Conecta com o banco de dados Realitme Database do Firebase
                     FirebaseClient firebase = new FirebaseClient(firebaseUrl);
 
-                    // TODO: Defina uma nova raiz para o banco de dados. Exemplo: pessoas
+                    // 
                     var result = await firebase
                         .Child("Larissa")
                         .PostAsync(jsonDados);
@@ -158,7 +159,7 @@ namespace HealthVisualization.Activities
             //Conecta com o banco de dados Realitme Database do Firebase
             FirebaseClient firebase = new FirebaseClient(firebaseUrl);
 
-            // TODO: Defina uma nova raiz para o banco de dados. Exemplo: pessoas
+            // 
             var usuario = (await firebase
                 .Child("Desenvolvedor")
                 .OnceAsync<Usuario>()).Select(item => new Usuario
