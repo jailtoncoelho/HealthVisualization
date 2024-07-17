@@ -27,8 +27,8 @@ namespace HealthVisualization.Activities
 
     public class CustomPagerAdapter : FragmentPagerAdapter
     {
-        // TODO: Defina novos nomes para as tabs
-        private readonly string[] tabTitles = { "Login", "Cadastro" };
+        // 
+        private readonly string[] tabTitles = { "Logar", "Cadastrar" };
 
         public CustomPagerAdapter(AndroidX.Fragment.App.FragmentManager fm) : base(fm)
         {
@@ -87,9 +87,10 @@ namespace HealthVisualization.Activities
 
         private async void CadastraUsuarioAsync(object? sender, EventArgs e, View view)
         {
-            // TODO: Adicione aqui os novos campos que foram criados
+            // 
             var nomeUser = view.FindViewById<EditText>(Resource.Id.editTextNome);
             var emailUser = view.FindViewById<EditText>(Resource.Id.editTextEmail);
+            var cpfser = view.FindViewById<EditText>(Resource.Id.editTextCPF);
             var senhaUser = view.FindViewById<EditText>(Resource.Id.editTextSenha);
             var confSenhaUser = view.FindViewById<EditText>(Resource.Id.editTextConfirmarSenha);
 
@@ -114,9 +115,9 @@ namespace HealthVisualization.Activities
                     //Conecta com o banco de dados Realitme Database do Firebase
                     FirebaseClient firebase = new FirebaseClient(firebaseUrl);
 
-                    // TODO: Defina uma nova raiz para o banco de dados. Exemplo: pessoas
+                    // 
                     var result = await firebase
-                        .Child("usuarios")
+                        .Child("Larissa")
                         .PostAsync(jsonDados);
 
                     if (result != null)
@@ -158,9 +159,9 @@ namespace HealthVisualization.Activities
             //Conecta com o banco de dados Realitme Database do Firebase
             FirebaseClient firebase = new FirebaseClient(firebaseUrl);
 
-            // TODO: Defina uma nova raiz para o banco de dados. Exemplo: pessoas
+            // 
             var usuario = (await firebase
-                .Child("usuarios")
+                .Child("Desenvolvedor")
                 .OnceAsync<Usuario>()).Select(item => new Usuario
                 {
                     Email = item.Object.Email,
