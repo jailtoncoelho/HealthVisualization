@@ -148,6 +148,7 @@ namespace HealthVisualization.Activities
             else
             {
                 Toast.MakeText(this, "GPS não é valido", ToastLength.Short).Show(); // 
+            }
         }
 
         private void StartLocationUpdates()
@@ -175,7 +176,7 @@ namespace HealthVisualization.Activities
                     .SetIcon(BitmapDescriptorFactory.DefaultMarker(BitmapDescriptorFactory.HueBlue)));
 
                 // Atualiza o texto com a latitude e longitude atual
-                _locationTextView.Text = $"Latitude: {location.Latitude}, Longitude: {location.Longitude}"; // TODO: Definir um novo texto do locationTextView
+                _locationTextView.Text = $"Latitude:10 {location.Latitude}, Longitude:90 {location.Longitude}"; //
             }
         }
 
