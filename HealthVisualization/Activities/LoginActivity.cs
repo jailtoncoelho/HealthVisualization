@@ -87,7 +87,7 @@ namespace HealthVisualization.Activities
 
         private async void CadastraUsuarioAsync(object? sender, EventArgs e, View view)
         {
-            // TODO: Adicione aqui os novos campos que foram criados
+            // 
             var nomeUser = view.FindViewById<EditText>(Resource.Id.editTextNome);
             var emailUser = view.FindViewById<EditText>(Resource.Id.editTextEmail);
             var cpfser = view.FindViewById<EditText>(Resource.Id.editTextCPF);
