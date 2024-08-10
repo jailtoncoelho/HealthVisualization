@@ -6,9 +6,18 @@
   <string name="login_digite_senha">Digite a senha</string>
   <string name="login_button_efetuar_login">Fazer Login</string>
 
+	<string name="cadastro_digite_nome">Digite aqui o nome</string>
+	<string name="cadastro_digite_email">Digite aqui o email</string>
+	<string name="cadastro_digite_cpf">Digite aqui o cpf</string>
+	<string name="cadastro_digite_telefone">Digite aqui o telefone</string>
+	<string name="cadastro_digite_senha">Digite aqui a senha</string>
+	<string name="cadastro_digite_senha_novamente">Confirme aqui a senha"</string>
+	
+	
 
-  <!-- TODO: Alterar o link do Firebase para o que você criou -->
-  <string name="firebase_url">https://health-visualization-default-rtdb.firebaseio.com/</string>
+
+  <!-- OK - TODO: Alterar o link do Firebase para o que você criou -->
+  <string name="firebase_url">https://easyrest-1961e-default-rtdb.firebaseio.com/</string>
 
 
 </resources>

@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- TODO: Mudar as cores conforme o design desejado -->
+<!-- OK - TODO: Mudar as cores conforme o design desejado -->
 <resources>
   <color name="colorPrimary">#2c3e50</color>
   <color name="colorPrimaryDark">#1B3147</color>
-  <color name="colorAccent">#3498db</color>
+  <color name="colorAccent">#0ce3e8</color>
   <color name="transparent">#00000000</color>
-  <color name="main_color">#3DE841</color>
+  <color name="main_color">#fcab10</color>
+	
+	<color name="background_color">#68b2f8</color>
+	<color name="text_color">#000000</color>
 </resources>

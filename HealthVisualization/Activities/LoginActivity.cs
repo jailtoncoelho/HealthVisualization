@@ -27,8 +27,8 @@ namespace HealthVisualization.Activities
 
     public class CustomPagerAdapter : FragmentPagerAdapter
     {
-        // TODO: Defina novos nomes para as tabs
-        private readonly string[] tabTitles = { "Login", "Cadastro" };
+        // OK - TODO: Defina novos nomes para as tabs
+        private readonly string[] tabTitles = { "Tela de Login", "Cadastrar Usuario" };
 
         public CustomPagerAdapter(AndroidX.Fragment.App.FragmentManager fm) : base(fm)
         {
@@ -87,26 +87,36 @@ namespace HealthVisualization.Activities
 
         private async void CadastraUsuarioAsync(object? sender, EventArgs e, View view)
         {
-            // TODO: Adicione aqui os novos campos que foram criados
+            // OK - TODO: Adicione aqui os novos campos que foram criados
             var nomeUser = view.FindViewById<EditText>(Resource.Id.editTextNome);
             var emailUser = view.FindViewById<EditText>(Resource.Id.editTextEmail);
             var senhaUser = view.FindViewById<EditText>(Resource.Id.editTextSenha);
             var confSenhaUser = view.FindViewById<EditText>(Resource.Id.editTextConfirmarSenha);
+            var cpf = view.FindViewById<EditText>(Resource.Id.editTextCPF);
+            var telefone = view.FindViewById<EditText>(Resource.Id.editTextTelefone);
 
 
             if (senhaUser?.Text == confSenhaUser?.Text)
             {
-                // Crie um objeto com os dados que deseja salvar
+                // OK - Crie um objeto com os dados que deseja salvar
                 var dados = new
                 {
                     Nome = nomeUser?.Text,
                     Senha = senhaUser?.Text,
-                    Email = emailUser?.Text
+                    Email = emailUser?.Text,
+                };
+
+                var dadosPessoa = new
+                {
+                    Nome = nomeUser?.Text,
+                    CPF = cpf?.Text,
+                    telefone = telefone?.Text
                 };
 
                 try
                 {
                     string jsonDados = JsonConvert.SerializeObject(dados);
+                    string jsonDadosPessoa = JsonConvert.SerializeObject(dadosPessoa);
 
                     // Busca a URL do Firebase do arquivo strings.xml
                     string firebaseUrl = Resources.GetString(Resource.String.firebase_url);
@@ -114,18 +124,25 @@ namespace HealthVisualization.Activities
                     //Conecta com o banco de dados Realitme Database do Firebase
                     FirebaseClient firebase = new FirebaseClient(firebaseUrl);
 
-                    // TODO: Defina uma nova raiz para o banco de dados. Exemplo: pessoas
+                    // OK - TODO: Defina uma nova raiz para o banco de dados. Exemplo: pessoas
                     var result = await firebase
                         .Child("usuarios")
                         .PostAsync(jsonDados);
 
-                    if (result != null)
+                    var resultPessoa = await firebase
+                        .Child("pessoas")
+                        .PostAsync(jsonDadosPessoa);
+
+
+                    if ((result != null) & (resultPessoa != null))
                     {
                         // reinicia valores dos campos da tela
                         nomeUser.Text = "";
                         senhaUser.Text = "";
                         emailUser.Text = "";
                         confSenhaUser.Text = "";
+                        telefone.Text = "";
+                        cpf.Text = "";
 
                         Toast.MakeText(Activity, "Cadastrado realizado com sucesso!", ToastLength.Short)?.Show();                        
                     }
@@ -158,7 +175,7 @@ namespace HealthVisualization.Activities
             //Conecta com o banco de dados Realitme Database do Firebase
             FirebaseClient firebase = new FirebaseClient(firebaseUrl);
 
-            // TODO: Defina uma nova raiz para o banco de dados. Exemplo: pessoas
+            // OK? - TODO: Defina uma nova raiz para o banco de dados. Exemplo: pessoas
             var usuario = (await firebase
                 .Child("usuarios")
                 .OnceAsync<Usuario>()).Select(item => new Usuario
@@ -167,6 +184,15 @@ namespace HealthVisualization.Activities
                     Senha = item.Object.Senha,
                     Nome = item.Object.Nome
                 }).Where(item => item.Email == email).FirstOrDefault();
+
+            var pessoa = (await firebase
+                .Child("pessoas")
+                .OnceAsync<Pessoa>()).Select(item => new Pessoa
+                {
+                    Nome = item.Object.Nome,
+                    Idade = item.Object.Idade,
+                    Sexo = item.Object.Sexo
+                }).Where(item => item.Nome == email).FirstOrDefault();
 
             if (usuario != null)
             {

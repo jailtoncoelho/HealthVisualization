@@ -6,16 +6,17 @@
     android:layout_height="match_parent">
 
 
-    <!-- TODO: Definir uma nova cor e mover de fundo para res/values/colors.xml -->
-    <!-- TODO: Definir uma nova cor e mover a cor do texto para res/values/colors.xml -->
-    <!-- TODO: Mover o textSize para res/values/dimens.xml -->
+    <!-- OK - TODO: Definir uma nova cor e mover de fundo para res/values/colors.xml -->
+    <!-- OK - TODO: Definir uma nova cor e mover a cor do texto para res/values/colors.xml -->
+    <!-- OK - TODO: Mover o textSize para res/values/dimens.xml -->
     <androidx.viewpager.widget.PagerTabStrip
         android:id="@+id/pagerTabStrip"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
-        android:background="#2196F3"
-        android:textColor="#FFFFFF"
+        android:background="@color/background_color"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/actvity_localizacao_textSize"
         android:paddingTop="16dp"
         android:paddingBottom="16dp" />
 

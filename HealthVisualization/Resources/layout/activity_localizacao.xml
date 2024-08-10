@@ -11,18 +11,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <!-- TODO: Mover o padding para res/values/dimens.xml -->
-    <!-- TODO: Mover o textSize para res/values/dimens.xml -->
-    <!-- TODO: Mover a cor do texto para res/values/colors.xml -->
+    <!-- OK - TODO: Mover o padding para res/values/dimens.xml -->
+    <!-- OK - TODO: Mover o textSize para res/values/dimens.xml -->
+    <!-- OK - TODO: Mover a cor do texto para res/values/colors.xml -->
     <TextView
         android:id="@+id/locationTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:padding="16dp"
+        android:padding="@dimen/actvity_localizacao_padding"
         android:text="Latitude: 0.0, Longitude: 0.0"
-        android:textSize="16sp"
-        android:textColor="#000000" />
+        android:textSize="@dimen/actvity_localizacao_textSize"
+        android:textColor="@color/text_color" />
     
 </RelativeLayout>

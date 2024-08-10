@@ -7,44 +7,63 @@
     android:paddingVertical="@dimen/inner_frame_layout_vertical_padding"
     android:paddingHorizontal="@dimen/inner_frame_layout_horizontal_padding">
 
-    <!-- TODO: Adicionar hint para "Digite aqui o nome" nos arquivos de valores -->
+    <!-- OK - TODO: Adicionar hint para "Digite aqui o nome" nos arquivos de valores -->
     <EditText
         android:inputType="textAutoComplete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Digite aqui o nome"
+        android:hint="@string/cadastro_digite_nome"
         android:minWidth="25px"
         android:minHeight="25px"
         android:id="@+id/editTextNome" />
 
-    <!-- TODO: Adicionar hint para "Digite aqui o email" nos arquivos de valores -->
+    <!-- OK - TODO: Adicionar hint para "Digite aqui o email" nos arquivos de valores -->
     <EditText
         android:inputType="textEmailAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Digite aqui o email"
+        android:hint="@string/cadastro_digite_email"
         android:minWidth="25px"
         android:minHeight="25px"
         android:id="@+id/editTextEmail" />
 
-    <!-- TODO: Adicionar hint para "Digite aqui a senha" nos arquivos de valores -->
+    <!-- OK - TODO: Adicionar hint para "Digite aqui a senha" nos arquivos de valores -->
     <EditText
         android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Digite aqui a senha"
+        android:hint="@string/cadastro_digite_senha"
         android:id="@+id/editTextSenha" />
 
-    <!-- TODO: Adicionar hint para "Confirme aqui a senha" nos arquivos de valores -->
+    <!-- OK - TODO: Adicionar hint para "Confirme aqui a senha" nos arquivos de valores -->
     <EditText
         android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Confirme aqui a senha"
+        android:hint="@string/cadastro_digite_senha_novamente"
         android:id="@+id/editTextConfirmarSenha" />
 
-    <!-- TODO: Adicionar dois novos campos (alem de nome e email) de EditText -->
-    <Button
+
+    <!-- OK - TODO: Adicionar dois novos campos (alem de nome e email) de EditText -->
+    <EditText
+        android:inputType="textAutoComplete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/cadastro_digite_cpf"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:id="@+id/editTextCPF" />
+
+    <EditText
+        android:inputType="textAutoComplete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/cadastro_digite_telefone"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:id="@+id/editTextTelefone" />    
+        
+        <Button
         android:text="Cadastrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

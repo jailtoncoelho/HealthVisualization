@@ -3,4 +3,7 @@
   <dimen name="inner_frame_layout_padding">10dp</dimen>
   <dimen name="inner_frame_layout_horizontal_padding">25dp</dimen>
   <dimen name="inner_frame_layout_vertical_padding">25dp</dimen>
+
+	<dimen name="actvity_localizacao_padding">16dp</dimen>
+	<dimen name="actvity_localizacao_textSize">20sp</dimen>
 </resources>
